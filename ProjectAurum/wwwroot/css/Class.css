@@ -1,0 +1,40 @@
+﻿/* Estilos para el logo minimalista de Aurum - Negro a Dorado */
+.logo-aurum {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: #000000; /* Color negro inicial */
+    text-transform: uppercase;
+    transition: all 0.4s ease; /* Transición suave para el cambio de color */
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+    .logo-aurum:hover {
+        color: #d4af37; /* Cambio a color dorado al pasar el cursor */
+        letter-spacing: 2.5px; /* Ligero aumento en el espaciado de letras */
+    }
+
+/* Opción con línea sutil (puedes usar esta clase adicional si deseas el efecto de subrayado) */
+.logo-aurum-line {
+    position: relative;
+}
+
+    .logo-aurum-line::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -3px;
+        left: 50%;
+        background-color: #d4af37; /* Línea dorada */
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    .logo-aurum-line:hover::after {
+        width: 100%;
+        opacity: 1;
+    }

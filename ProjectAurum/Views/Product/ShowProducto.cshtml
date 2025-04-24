@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjectAurum.Models.Product.Productos>
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        .producto-container {
+            display: flex;
+            overflow-x: scroll;
+            padding: 10px;
+        }
+
+        .producto-card {
+            flex: 0 0 auto;
+            width: 300px; 
+            margin-right: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+        }
+
+            .producto-card img {
+                width: 100%;
+                height: auto;
+                max-height: 200px; 
+                object-fit: contain; 
+            }
+    </style>
+</head>
+<body>
+    <h1>Auriculares</h1>
+    <div class="producto-container">
+        @foreach (var product in Model)
+        {
+            <div class="producto-card">
+                <img src="@product.Imagen" alt="Imagen de @product.Nombre" width="150" height="150">
+                <h3>@product.Nombre</h3>
+                <p>Precio: $@product.Precio</p>
+                <form asp-controller="ShoppingCart" asp-action="AddToCart" method="post">
+                    <input type="hidden" name="productId" value="@product.Id" />
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" />
+                    <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                </form>
+            </div>
+        }
+    </div>
+</body>
+</html>

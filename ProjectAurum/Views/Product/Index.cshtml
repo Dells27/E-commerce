@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Productos</h1>
+</div>
+
+<a href="@Url.Action("Create", "Product")" class="btn btn-success">Agregar Nuevo Producto</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Año</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Product in Model)
+        {
+            <tr>
+                <td>@Product.Id</td>
+                <td>@Product.Nombre</td>
+                <td>@Product.Imagen</td>
+                <td>@(Product.Descripción ?? "No disponible")</td>
+                <td>@Product.Precio</td>
+                <td>@Product.Stock</td>
+                <td>@Product.Año</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Product", new { id = Product.Id })"><i class="fa-solid fa-pen"></i></a> |
+                    <a href="@Url.Action("Delete", "Product", new { id = Product.Id })"><i class="fa-solid fa-trash-can" style="color: #b02129;"></i></a> |
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

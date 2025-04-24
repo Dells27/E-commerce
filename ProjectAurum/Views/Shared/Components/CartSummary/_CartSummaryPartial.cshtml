@@ -1,0 +1,72 @@
+﻿@model ProjectAurum.Models.Cart.ShoppingCart.ShoppingCart
+<style>
+    /* Contenedor principal del CartSummary */
+    .cart-summary-component {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Enlace del CartSummary */
+    .cart-summary-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #3f6c6b;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+        .cart-summary-link:hover {
+            color: #2a4b4a;
+        }
+
+    /* Contenedor del ícono del carrito */
+    .cart-icon-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Ícono del carrito */
+    .cart-summary-icon {
+        font-size: 1.2rem; /* Tamaño ajustado del ícono */
+        color: #3f6c6b;
+    }
+
+    /* Insignia del carrito */
+    .cart-summary-badge {
+        position: absolute;
+        top: -12px; /* Ajuste para alejar la insignia del ícono */
+        right: -12px; /* Ajuste para alejar la insignia del ícono */
+        background-color: #6c757d; /* Color más tenue */
+        color: white;
+        font-size: 0.5rem; /* Tamaño ajustado de la insignia */
+        padding: 3px 6px; /* Tamaño ajustado del padding */
+        border-radius: 50%; /* Asegura que sea perfectamente circular */
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+    }
+
+</style>
+<div class="cart-summary-component">
+    <a class="cart-summary-link" asp-controller="ShoppingCart" asp-action="Index" aria-label="Ver carrito de compras">
+        <div class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping cart-summary-icon"></i>
+            @if (Model.Items != null && Model.Items.Sum(i => i.Quantity) > 0)
+            {
+                <span class="cart-summary-badge">
+                    @(Model.Items.Sum(i => i.Quantity))
+                </span>
+            }
+        </div>
+    </a>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://static.vecteezy.com/system/resources/previews/012/659/578/non_2x/two-dark-realistic-smartphones-with-geometric-figures-on-podium-mobile-phones-and-simply-realistic-objects-modern-cell-phones-template-on-black-background-vector.jpg" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.apple.com/v/airpods/x/images/overview/pro_endframe__e2wscfy18pme_large.jpg" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1606568156390-8f4edb5ef31f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwcGFyYSUyMHBjfGVufDB8fDB8fHww" class="d-block w-100" alt="Imagen 3">
+        </div>
+    </div>
+
+    
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+    </div>
+</div>
+
+<div class="text-left">
+    <h1 class="display-6">Categorias populares</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Producto 1 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <a asp-controller="Product" asp-action="ShowProducto">
+                        <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/128/Editable_app-iconos-2022-11.png" class="card-img-top" alt="Producto 1">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Auriculares</h5>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <a asp-controller="Product" asp-action="ShowCategory2">
+                    <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/130/Editable_app-iconos-2022-06.png" class="card-img-top" alt="Producto 2">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Laptops</h5>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <a asp-controller="Product" asp-action="ShowCategory3">
+                    <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/132/Editable_app-iconos-2022-18.png" class="card-img-top" alt="Producto 3">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Smart Home</h5>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <a asp-controller="Product" asp-action="ShowCategory4">
+                    <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/127/Editable_app-iconos-2022-19.png" class="card-img-top" alt="Producto 3">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Celulares</h5>                 
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 1 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/128/Editable_app-iconos-2022-11.png" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Auriculares</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-2 mb-2">
+                <div class="card border-0">
+                    <img src="https://barulu-seller.s3.amazonaws.com/production/uploads/app_link/image/130/Editable_app-iconos-2022-06.png" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Laptops</h5>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

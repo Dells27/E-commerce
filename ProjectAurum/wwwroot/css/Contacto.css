@@ -1,0 +1,118 @@
+﻿/* Archivo: Contacto.css */
+
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Sección de contacto */
+.contacto {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .contacto h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #007BFF;
+    }
+
+    .contacto p {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+.contacto-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.opcion {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .opcion:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .opcion a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .opcion a:hover {
+            background-color: #0056b3;
+        }
+
+
+/* Formulario de contacto */
+.formulario-contacto {
+    margin-top: 20px;
+}
+
+    .formulario-contacto label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .formulario-contacto button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #28a745, #218838);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .formulario-contacto button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .formulario-contacto button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Usuarios</h1>
+</div>
+
+
+<a href="@Url.Action("Create", "Account")" class="btn btn-success">Crear Nuevo Usuario</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Nombre</td>
+                <td>@user.Correo</td>
+                <td>@user.Rol</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Account", new { id = user.Id })"><i class="fa-solid fa-pen"></i></a> |
+                    <a href="@Url.Action("Delete", "Account", new { id = user.Id })"><i class="fa-solid fa-trash-can" style="color: #b02129;"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

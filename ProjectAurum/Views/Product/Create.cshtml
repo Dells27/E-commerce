@@ -1,0 +1,44 @@
+﻿@model ProjectAurum.Models.Product.Productos
+
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CategoríaID">Categoría</label>
+        <select class="form-control" id="CategoríaID" name="CategoríaID" required>
+            <option value="">Selecciona una Categoría</option>
+            @foreach (var categoria in ViewBag.Categorías)
+            {
+                <option value="@categoria.Id">@categoria.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Año">Año</label>
+        <input type="number" class="form-control" id="Año" name="Año" value="@DateTime.Now.Year" required />
+    </div>
+
+
+    <div class="form-group">
+        <label for="Descripcion">Descripción</label>
+        <input type="text" class="form-control" id="Descripción" name="Descripción"  required />
+    </div>
+
+
+    <div class="form-group">
+    <label for="Precio">Precio</label>
+    <input type="number" class="form-control" id="Precio" name="Precio" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Producto</button>
+</form>

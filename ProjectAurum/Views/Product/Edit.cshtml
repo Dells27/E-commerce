@@ -1,0 +1,30 @@
+﻿@model ProjectAurum.Models.Product.Productos
+
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Editar Producto</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" asp-for="Nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                    <a asp-action="Index" class="btn btn-link text-danger">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Contacto";
+}
+<link rel="stylesheet" href="/css/Contacto.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<body>
+    <!-- Sección de contacto -->
+    <section class="contacto">
+        <div class="contacto-opciones">
+            <!-- Opción de WhatsApp -->
+            <div class="opcion">
+                <h3>WhatsApp</h3>
+                <p>Contáctanos directamente en WhatsApp</p>
+                <a href="https://wa.me/1234567890" target="_blank">Enviar mensaje</a>
+            </div>
+            <!-- Opción de Call Center -->
+            <div class="opcion">
+                <h3>Call Center</h3>
+                <p>Llámanos para atención inmediata</p>
+                <a href="tel:+1234567890">Llamar ahora</a>
+            </div>
+            <!-- Opción de Formulario de Consultas -->
+            <div class="opcion">
+                <h3>Formulario de Consultas</h3>
+                <p>Envíanos un mensaje con tu consulta y te responderemos lo antes posible.</p>
+            </div>
+        </div>
+        
+
+        <!-- Formulario de contacto -->
+        <form class="formulario-contacto" action="/contacto/enviar" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" placeholder="Por favor colocar tu nombre completo" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" placeholder="Por favor colocar un correo de uso diario" id="correo" name="correo" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" placeholder="Por favor colocar tu número de teléfono" id="telefono" name="telefono" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" placeholder="Colocar consulta aquí" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Sección del mapa interactivo -->
+        <section class="geolocalizacion hidden" id="map-section">
+            <h3>Mapa Interactivo</h3>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+        </section>
+
+        <!-- Sección de acciones -->
+        <section class="geolocalizacion hidden" id="actions-section">
+            <h3>Acciones</h3>
+            <button onclick="mostrarMiUbicacion()">Mostrar Mi Ubicación</button>
+            <button onclick="mostrarUbicacionLocal()">Mostrar Ubicación del Local</button>
+            <button onclick="redirigirAWaze()">Llegar con Waze</button>
+        </section>
+    </section>
+
+    <script src="~/js/Map.js"></script>
+
+</body>

@@ -1,0 +1,279 @@
+/* 
+ * CLEAN CSS STRUCTURE
+ * ------------------
+ * 1. Global Styles & Reset
+ * 2. Layout Components
+ *    2.1 Container
+ *    2.2 Header
+ *    2.3 Footer
+ * 3. Navigation
+ *    3.1 Top Bar
+ *    3.2 Search Bar
+ *    3.3 User Nav
+ *    3.4 Main Nav
+ * 4. Components
+ *    4.1 Buttons
+ *    4.2 Carousel
+ * 5. Utilities
+ * 6. Media Queries
+ */
+
+/* =====================
+   1. Global Styles & Reset
+   ===================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================
+   2. Layout Components
+   ===================== */
+
+/* 2.1 Container */
+.container {
+    flex: 1; /* Makes content fill available space */
+}
+
+/* 2.2 Header */
+.header {
+    border-bottom: 1px solid #ddd;
+    background: white;
+}
+
+/* 2.3 Footer */
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 40px 0;
+}
+
+    footer h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    footer ul {
+        padding: 0;
+        list-style: none;
+    }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+            footer ul li a {
+                text-decoration: none;
+                color: #333;
+                transition: color 0.3s;
+            }
+
+                footer ul li a:hover {
+                    color: #007bff;
+                }
+
+    footer hr {
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+    }
+
+    footer .text-center p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+/* =====================
+   3. Navigation
+   ===================== */
+
+/* 3.1 Top Bar */
+.top-bar {
+    padding: 10px 0;
+}
+
+/* 3.2 Search Bar */
+.search-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+    .search-bar input {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 5px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .search-bar i {
+        color: gray;
+    }
+
+/* 3.3 User Nav */
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+    .user-actions .nav-link {
+        color: black;
+        margin-right: 10px;
+    }
+
+.separator {
+    color: gray;
+    margin: 0 10px;
+}
+
+/* 3.4 Main Nav */
+.navbar-brand {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 2.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+    .navbar-brand:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+.navbar-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+    .navbar-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: #333;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-nav a:hover::after {
+        width: 100%;
+    }
+
+.navbar-nav .user-separator a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+    .navbar-nav .user-separator a::after {
+        content: "|";
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #333;
+    }
+
+.navbar-nav .dropdown-toggle i {
+    transition: none;
+}
+
+.navbar-nav .dropdown-toggle:hover i {
+    color: #333;
+}
+
+.navbar-toggler {
+    order: -1;
+}
+
+/* =====================
+   4. Components
+   ===================== */
+
+/* 4.1 Buttons */
+.btn-primary {
+    width: 200px;
+    background-color: #3f6c6b;
+    border: none;
+    border-radius: 20px;
+}
+
+    .btn-primary:hover {
+        background-color: #345c5b;
+    }
+
+/* 4.2 Carousel */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* =====================
+   5. Utilities
+   ===================== */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    z-index: 1000;
+}
+
+/* =====================
+   6. Media Queries
+   ===================== */
+@media (max-width: 991px) {
+    .search-bar {
+        display: none;
+    }
+
+    .navbar-collapse.show .search-bar {
+        display: flex;
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    .navbar-collapse .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Estilo para el enlace de usuario */
+    .user-link {
+        display: inline-flex;
+        align-items: center;
+        color: #3f6c6b;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .user-link i {
+            font-size: 1.5rem;
+            margin-right: 5px;
+        }
+
+        .user-link:hover {
+            color: #2a4b4a;
+        }
+
+}

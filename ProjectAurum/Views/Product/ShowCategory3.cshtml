@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Productos";
+
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Productos</title>
+        <style>
+            .producto-container {
+                display: flex;
+                overflow-x: scroll;
+                padding: 10px;
+            }
+
+            .producto-card {
+                flex: 0 0 auto;
+                width: 200px;
+                margin-right: 20px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+
+                .producto-card img {
+                    width: 100%;
+                    height: auto;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>SmartHome</h1>
+        <div class="producto-container">
+            @foreach (var product in Model)
+            {
+                <div class="producto-card">
+                    <img src="@product.Imagen" alt="Imagen de @product.Nombre" width="150" height="150">
+                    <h3>@product.Nombre</h3>
+                    <p>Precio: $@product.Precio</p>
+                </div>
+            }
+        </div>
+    </body>
+    </html>
+}
